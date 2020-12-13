@@ -27,7 +27,7 @@ class ViewController: UIViewController {
 
 }
 
-//MARK:- Extensions
+//MARK:- Extensions - UIPickerViewDataSource & Delegate
 extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -49,6 +49,7 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
 }
 
+//MARK:- CoinManagerDelegate
 extension ViewController: CoinManagerDelegate {
     
     func didUpdatePrice(price: String, currency: String) {
@@ -58,7 +59,7 @@ extension ViewController: CoinManagerDelegate {
         }
     }
     
-    func didFailWithError(error: String) {
+    func didFailWithError(error: Error) {
         print(error)
     }
     
